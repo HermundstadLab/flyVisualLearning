@@ -297,8 +297,8 @@ plotPIscores(rsK96C,rsK96,sK96C,sK96,'kir','both',p);       %SI Fig S2J
 plotPIscores(rsK90C,rsK90,sK90C,sK90,'kir','DnBar',p);      %SI Fig S2H
 plotPIscores(rsK90C,rsK90,sK90C,sK90,'kir','UpBar',p);      %SI Fig S2I 
 
-plotPIscores(rsK96C,rsK96,sK96C,sK96,'kir','UpBar',p);      %SI Fig S2K 
-plotPIscores(rsK96C,rsK96,sK96C,sK96,'kir','DnBar',p);      %SI Fig S2L
+plotPIscores(rsK96C,rsK96,sK96C,sK96,'kir','DnBar',p);      %SI Fig S2K
+plotPIscores(rsK96C,rsK96,sK96C,sK96,'kir','UpBar',p);      %SI Fig S2L 
 
 %% SI Fig S3: perform ANOVA
 AOV = performANOVA(rsL,rsNL,rsK90C,rsK90,rsK96C,rsK96,sL,sNL,sK90C,sK90,sK96C,sK96,p);
