@@ -42,7 +42,12 @@ for fly=1:numel(rs)
             for j=1:numel(d)
                 plot([0,d(j).*cos(offsets(j))],[0,d(j).*sin(offsets(j))],'-k','linewidth',2)
                 scatter(d(j).*cos(offsets(j)),d(j).*sin(offsets(j)),400*d(j),d(j),'filled');
-                clim([0,1]);colormap(flipud(gray));
+                if isMATLABReleaseOlderThan("R2022a")
+                    caxis([0,1]);
+                else
+                    clim([0,1]);
+                end
+                colormap(flipud(gray));
             end
             pbaspect([1 1 1])
             axis off
