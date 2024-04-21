@@ -294,8 +294,8 @@ plotPIscores(rsK90C,rsK90,sK90C,sK90,'kir','both',p);       %SI Fig S2G
 plotPIscores(rsK96C,rsK96,sK96C,sK96,'kir','both',p);       %SI Fig S2J 
 
 %plot PI scores split out by pattern
-plotPIscores(rsK90C,rsK90,sK90C,sK90,'kir','UpBar',p);      %SI Fig S2H 
-plotPIscores(rsK90C,rsK90,sK90C,sK90,'kir','DnBar',p);      %SI Fig S2I
+plotPIscores(rsK90C,rsK90,sK90C,sK90,'kir','DnBar',p);      %SI Fig S2H
+plotPIscores(rsK90C,rsK90,sK90C,sK90,'kir','UpBar',p);      %SI Fig S2I 
 
 plotPIscores(rsK96C,rsK96,sK96C,sK96,'kir','UpBar',p);      %SI Fig S2K 
 plotPIscores(rsK96C,rsK96,sK96C,sK96,'kir','DnBar',p);      %SI Fig S2L
