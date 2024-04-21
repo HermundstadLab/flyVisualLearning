@@ -28,21 +28,22 @@ function [headLocs,goalLocs,headGains,goalGains,PIscores,distDanger,angdiff,head
 %
 
 if nargin<2
-    params =  {'sym','train','uniformIC','initAsymScene'};
+    params =  {'sym','train','uniform','asym_init'};
 end
 
 %initial conditions 
 gain = linspace(0,.5,6);
 gain = gain(2:end);
 niter = 200;
+centerDangerLocs = [1,17];
 
 if strcmp(params{2},'train')==1 
     if strcmp(params{3},'uniform')==1
-        loc = ones(1,niter);        % center goal heading within danger zone
+        loc = centerDangerLocs(1).*ones(1,niter);    % center goal heading within danger zone
     end
 elseif strcmp(params{2},'probe')==1
-    if strcmp(params{3},'uniformIC')==1
-        loc = 17.*ones(1,niter);    % center goal heading within danger zone
+    if strcmp(params{3},'uniform')==1
+        loc = centerDangerLocs(1).*ones(1,niter);    % center goal heading within danger zone
     end
 else
     error('unrecognized simulation parameters')
