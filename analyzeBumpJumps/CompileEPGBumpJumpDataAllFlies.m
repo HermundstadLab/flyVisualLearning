@@ -202,7 +202,12 @@ for f = 1:nFlies
         circDiffMaxPeaksDisc = bins(ic);
 
         % Get kernel density estimate
-        [density, xmesh] = kde(circDiffMaxPeaksDisc,NumPoints=2^8);
+        if isMATLABReleaseOlderThan("R2023b")
+            % Use Zdravko Botev's kde from matlabcentral
+            [~, density, xmesh, ~] = kde(circDiffMaxPeaksDisc,2^8);
+        else
+            [density, xmesh] = kde(circDiffMaxPeaksDisc,NumPoints=2^8);
+        end
 
         % Find peaks in density distribution
         [~,locs]      = findpeaks(density);
