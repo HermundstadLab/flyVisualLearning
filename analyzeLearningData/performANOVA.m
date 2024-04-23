@@ -77,6 +77,12 @@ PIprobe = sum(ninds(:,p.probeTrials2).*PI(:,p.probeTrials2),2)./sum(ninds(:,p.pr
 dPI = PIprobe-PInaive;
 
 tbl = table(genotype, laser, pattern, kir, dPI, VariableNames=["genotype","laser","pattern","kir","dPI"]);
-AOV = anova(tbl,"dPI ~ genotype + laser + pattern + kir + pattern:kir");
+tbl = table(genotype, laser, pattern, kir, dPI, VariableNames=["genotype","laser","pattern","kir","dPI"]);
+if isMATLABReleaseOlderThan("R2022b") 
+    error('This function depends on anova.m, which was introduced to MATLAB starting in their 2022b release.');
+else
+    AOV = anova(tbl,"dPI ~ genotype + laser + pattern + kir + pattern:kir");
+end
+    
 
 end
