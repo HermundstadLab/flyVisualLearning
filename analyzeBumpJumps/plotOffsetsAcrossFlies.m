@@ -23,7 +23,7 @@ for fly=1:numel(tSeriesProcAll)
             xmesh   = tSeriesProcAll(fly).jumpData(trial).bumpjumps.xmesh;
             locs    = tSeriesProcAll(fly).jumpData(trial).bumpjumps.centerLocs;
             offsets = xmesh(locs);
-            [~,minlocs] = findpeaks2(1-density);
+            [~,minlocs] = findpeaks(1-density);
             minlocs = [1,minlocs,numel(xmesh)];
 
             d = [];
