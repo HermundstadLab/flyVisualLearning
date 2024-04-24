@@ -1,17 +1,27 @@
-function plotOffsetsAcrossFlies(rs,trials)
+function plotOffsetsAcrossFlies(tSeriesProcAll,trials)
+% PLOTOFFSETSACROSSFLIES plots the orientation and strength of different 
+% offsets between the bump in the EB and the visual scene. Plotted for all 
+% flies across multiple trials
+%
+% INPUTS:
+%   tSeriesProcAll: data structure containing fluorescence data
+%   trials:  integer indices of trials to use
+%
+% See also: PLOTOFFSETSUMMARY
+%
 
 figure;hold on;set(gcf,'Position',[200 200 1000 1000],'color','w')
 xx = linspace(0,2*pi,100);
 
-for fly=1:numel(rs)
+for fly=1:numel(tSeriesProcAll)
     m = 1;
     for i=1:numel(trials)
         trial = trials(i);
         
-        if numel(rs(fly).jumpData(trial).PIinds)>0
-            density = rs(fly).jumpData(trial).bumpjumps.density;
-            xmesh   = rs(fly).jumpData(trial).bumpjumps.xmesh;
-            locs    = rs(fly).jumpData(trial).bumpjumps.centerLocs;
+        if numel(tSeriesProcAll(fly).jumpData(trial).PIinds)>0
+            density = tSeriesProcAll(fly).jumpData(trial).bumpjumps.density;
+            xmesh   = tSeriesProcAll(fly).jumpData(trial).bumpjumps.xmesh;
+            locs    = tSeriesProcAll(fly).jumpData(trial).bumpjumps.centerLocs;
             offsets = xmesh(locs);
             [~,minlocs] = findpeaks2(1-density);
             minlocs = [1,minlocs,numel(xmesh)];
