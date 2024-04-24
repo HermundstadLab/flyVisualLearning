@@ -1,5 +1,7 @@
 function [Ypk,Xpk,Wpk,Ppk] = findpeaks2(Yin,varargin)
-%FINDPEAKS2 Find local peaks in data
+%FINDPEAKS2 Find local peaks in data, taking only the first of near-equal
+%   pairs of values
+%
 %   PKS = FINDPEAKS(Y) finds local peaks in the data vector Y. A local peak
 %   is defined as a data sample which is either larger than the two
 %   neighboring samples or is equal to Inf.
