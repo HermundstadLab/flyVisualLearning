@@ -204,7 +204,7 @@ for f = 1:nFlies
         % Get kernel density estimate
         if isMATLABReleaseOlderThan("R2023b")
             % Use Zdravko Botev's kde from matlabcentral
-            [~, density, xmesh, ~] = kde(circDiffMaxPeaksDisc,2^8);
+            [~, density, xmesh, ~] = kde_zb(circDiffMaxPeaksDisc,2^8);
         else
             [density, xmesh] = kde(circDiffMaxPeaksDisc,NumPoints=2^8);
         end
