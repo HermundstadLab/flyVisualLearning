@@ -449,17 +449,17 @@ if ismember(4,plotNum)
         if i==numel(imin)
             plot([50,50],[-8,-1],'--k','linewidth',1);
         end
-    
         xlim([0,300]);
         set(gca,'fontsize',16);
-        ylabel('change in distance');
+        ylabel('local log10(variance) in goal updates');
         
         subplot(2,3,6);hold on;
         errorbar(i,nanmean(log10(nanvar(vG(jj(ii),351:end),[],2))),nanstd(log10(nanvar(vG(jj(ii),351:end),[],2))),...
             'o','linewidth',2,'color',cmap(i,:),'markerfacecolor',cmap(i,:),'markeredgecolor','none');
         xlim([0,6])
+        ylim([-3.5,-0.5])
         set(gca,'fontsize',16);
-        ylabel('variance in goal updates');
+        ylabel('overall log10(variance) in goal updates');
         
     end
     
@@ -484,15 +484,16 @@ if ismember(4,plotNum)
     ylim([0,500]);
     set(gca,'fontsize',16);
     yticklabels({})
-    title('change in distance');
+    title('local log10(variance) in goal updates');
     xlabel('time')
     
     ax4 = subplot(2,3,3);hold on;
     plot(log10(nanvar(vG(jj,:),[],2)),1:niter,'-k')
     set(gca,'fontsize',16);
     yticklabels({})
-    title('variance in goal updates');
+    title('overall log10(variance) in goal updates');
     xlabel('time')
+    xlim([-3.5,-0.5])
 end
 
 
