@@ -455,7 +455,7 @@ if ismember(4,plotNum)
         ylabel('change in distance');
         
         subplot(2,3,6);hold on;
-        errorbar(i,nanmean(log10(nanvar(vG(jj(ii),351:end),[],2))),nanstd(log(nanvar(vG(jj(ii),351:end),[],2))),...
+        errorbar(i,nanmean(log10(nanvar(vG(jj(ii),351:end),[],2))),nanstd(log10(nanvar(vG(jj(ii),351:end),[],2))),...
             'o','linewidth',2,'color',cmap(i,:),'markerfacecolor',cmap(i,:),'markeredgecolor','none');
         xlim([0,6])
         set(gca,'fontsize',16);
