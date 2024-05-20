@@ -4,14 +4,6 @@ function plotSims_VisualMapping(p,headGains,headingJumps,headingVisits,PIscores,
 % compass heading
 %
 % INPUTS:
-%   plotting key for plotNum
-%       1: vector maps
-%       2: individual trajectories
-%       3: misalignment across individual flies
-%       4: variance in goal updates
-%       5: fraction of flies with different initial goal headings
-%       6: average learning trajectories, split based on initial strength of goal heading
-%       7: CDF of initial conditions
 %   headGains:      strength of most stable compass heading over time
 %   headingVisits:  histogram of visits to different compass headings
 %   headingJumps:   histogram of headings at which compass heading jumped
