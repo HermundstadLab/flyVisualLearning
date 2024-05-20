@@ -543,20 +543,17 @@ if ismember(6,plotNum)
         ii = randperm(1000,2*nperms);
         i1 = find(goalGains(jj(ii),1)< nanmedian(goalGains(jj(ii),1)));
         i2 = find(goalGains(jj(ii),1)>=nanmedian(goalGains(jj(ii),1)));
-    
-        PIs1 = [PIs1;std(PIscores(jj(ii(i1)),:))./sqrt(nperms)];
+
+        % PI scores
         PIm1 = [PIm1;mean(PIscores(jj(ii(i1)),:))];
-        PIs2 = [PIs2;std(PIscores(jj(ii(i2)),:))./sqrt(nperms)];
         PIm2 = [PIm2;mean(PIscores(jj(ii(i2)),:))];
-        
-        Gs1 = [Gs1;std(goalGains(jj(ii(i1)),:))./sqrt(nperms)];
+
+        % Goal gains
         Gm1 = [Gm1;mean(goalGains(jj(ii(i1)),:))];
-        Gs2 = [Gs2;std(goalGains(jj(ii(i2)),:))./sqrt(nperms)];
         Gm2 = [Gm2;mean(goalGains(jj(ii(i2)),:))];
-        
-        DDs1 = [DDs1;std(distDanger(jj(ii(i1)),:))./sqrt(nperms)];
+
+        % Distance to danger
         DDm1 = [DDm1;mean(distDanger(jj(ii(i1)),:))];
-        DDs2 = [DDs2;std(distDanger(jj(ii(i2)),:))./sqrt(nperms)];
         DDm2 = [DDm2;mean(distDanger(jj(ii(i2)),:))];
     end
     
